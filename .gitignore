@@ -2,3 +2,5 @@
 venv
 # IDE
 .idea
+# Environmental files
+.env
