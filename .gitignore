@@ -1,0 +1,4 @@
+# Virtual environments
+venv
+# IDE
+.idea
