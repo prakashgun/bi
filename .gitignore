@@ -4,3 +4,10 @@ venv
 .idea
 # Environmental files
 .env
+.env.dev
+.env.prod
+.env.prod.db
+# Cache
+*.pyc
+__pycache
+.DS_Store
