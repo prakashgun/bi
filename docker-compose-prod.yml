@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: ./app
-    dockerfile: docker/prod/Dockerfile
+      dockerfile: docker/prod/Dockerfile
     command: gunicorn app.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
@@ -22,7 +22,7 @@ services:
     env_file:
       - ./.env.prod.db
   nginx:
-    build: ./nginx
+    build: ./app/docker/prod/nginx
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/mediafiles

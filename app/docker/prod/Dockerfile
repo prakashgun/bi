@@ -51,12 +51,12 @@ WORKDIR $APP_HOME
 # install dependencies
 RUN apk update && apk add libpq
 COPY --from=builder /usr/src/app/wheels /wheels
-COPY --from=builder /usr/src/app/requirements.txt .
+COPY --from=builder /usr/src/app/requirements/prod.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
 
 # copy entrypoint.sh
-COPY ./docker/prod/entrypoint.prod.sh $APP_HOME
+COPY ./docker/prod/entrypoint.sh $APP_HOME
 
 # copy project
 COPY . $APP_HOME
