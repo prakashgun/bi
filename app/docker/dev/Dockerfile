@@ -15,7 +15,7 @@ RUN apk update \
 # install dependencies
 RUN pip install --upgrade pip
 COPY . /usr/src/app
-RUN pip install -r requirements/dev.txt
+RUN pip install -r app/requirements/dev.txt
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/docker/dev/entrypoint.sh"]

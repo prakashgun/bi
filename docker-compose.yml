@@ -3,8 +3,8 @@ version: '3'
 services:
   web:
     build:
-      context: ./app
-      dockerfile: docker/dev/Dockerfile
+      context: .
+      dockerfile: app/docker/dev/Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
